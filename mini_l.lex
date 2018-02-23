@@ -71,13 +71,3 @@ return	{current += yyleng; return RETURN;}
 .		{printf("unrecognized symbol %s line: %d position %d\n:", yytext, lineNumber, current); exit(0);}
 
 %%
-
-
-int main(int argc, char** argv) {
-	++argv, --argc;
-	if(argc > 0 )
-		yyin = fopen(argv[0],"r");
-	else
-		yyin = stdin;
-	yylex();
-}
